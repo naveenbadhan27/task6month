@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<style type="text/css">
+	#value{
+		display: none;
+	}
+</style>
+
+<script type="text/javascript">
+	function abc(){
+		
+			var vll = event.which || event.keyCode || 0;
+
+		$(document).ready(function(){
+			// console.log(vll);
+			if (vll == 13) {
+				// var pro = document.getElementById('product').value;
+				var pro = $('#product').val();
+				if (pro == 'apple' || pro == 'mango' || pro == 'banana' || pro == 'grapee') {
+					// document.getElementById('value').style.display = 'block';
+					// document.getElementById('value').focus();
+					$('#value').css({display:'block'});
+					$('#value').focus();
+				}else{
+					alert('No product found with this Name');
+					document.getElementById('product').value = '';
+					document.getElementById('product').focus();
+				}
+			}
+		})
+	}
+</script>
+
+
+<div class="col-lg-4 col-lg-offset-4">
+	<input type="text" id="product" onkeyup="abc()" placeholder="Product" autofocus class="form-control">
+	<br>
+	<input type="number" id="value" onkeyup="bcd()" placeholder="Fill Pro Value" class="form-control">
+</div>
+
+
+<!-- <form action="" method="post">
+	<input type="text" name="name" placeholder="Fill your Name" required pattern="^[A-Z][a-z]+" title="Please fill first letter capital, eg. Naveen">
+	<input type="submit" name="submit" value="submit">
+</form> -->
+
+
+</body>
+</html>
