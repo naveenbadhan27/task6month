@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+<button id="app">+</button>
+
+<div id="show">
+</div>
+
+<input type="text" id="name" placeholder="Name">
+<input type="email" id="email" placeholder="Email">
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$('#name').keyup(function(){
+			// console.log($('#name').val());
+			var inp = $('#name').val();
+			var pat = /^[A-Z]+$/;
+			if(inp.match(pat)){
+				console.log('true');
+			}else{
+				console.log('False');
+			}
+		})
+
+		$('#email').change(function(){
+			// console.log($('#name').val());
+			var inp = $('#email').val();
+			var pat = /^[A-Z]+$/;
+			if(inp.match(pat)){
+				console.log('true');
+			}else{
+				console.log('False');
+			}
+		})
+
+
+
+
+		var a = 1;
+		$('#app').click(function(){
+			$('#show').append("<div id='qab"+a+"'><input type='text' placeholder='Name'><button id='ab"+a+"' onclick='del(this.id)'>x</button></div>");
+			a++;
+		})
+	})
+	function del(x){
+		$(document).ready(function(){
+				$('#q'+x).remove();
+		})
+	}
+</script>
+
+
+
+
+
+</body>
+</html>

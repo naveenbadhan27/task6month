@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style type="text/css">
+		.ab{
+			height: 100px;
+			width: 100px;
+			background: blue;
+		}
+		.ac{
+			height: 100px;
+			width: 100px;
+		}
+	</style>
+</head>
+<body>
+
+<input type="text" id="name" placeholder="Name">
+<input type="text" id="printname" placeholder="Print Name">
+<button id="hide">Click 1</button>
+<button id="show">Click 2</button>
+<button id="shows">Click 4</button>
+<button id="toggle">Click 3</button>
+<p id="output"></p>
+<p id="output2"></p>
+
+<div class="ab">
+	Hello
+</div>
+<div class="ac">
+	Hello
+</div>
+
+<div id="prin"></div>
+
+<xmp>
+	<p>hello</p>
+</xmp>
+<script type="text/javascript">
+$(document).ready(function(){
+	// alert('Hi');
+
+	$('#toggle').click(function(){
+		$('.ab').animate({height:"+=100",width:"+=100"},"slow");
+		$('.ac').css({"background-color":"red"});
+	})
+
+
+	$('#show').click(function(){
+		// $('#prin').addClass("ab")
+		$('#prin').append("<input type=''>");
+	})
+
+	// $('#shows').click(function(){
+	// 	$('#prin').removeClass("ab")
+	// })
+
+	$('#shows').click(function(){
+		// $('#prin').toggleClass("ab")
+		$('#prin').remove();
+	})
+
+
+
+
+
+
+
+
+	$('#hide').click(function(){
+
+		var a = $('#name').val();
+		$('#output').text(a);
+		$('#output2').html(a);
+		$('#printname').val(a);
+	})
+
+
+})
+
+
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
